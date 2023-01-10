@@ -17,24 +17,24 @@ plugins:
   #- search.suggest
   #- search.highlight
   # https://timvink.github.io/mkdocs-print-site-plugin/index.html
-  #- print-site:
-  #    add_to_navigation: true
-  #    print_page_title: 'Imprimer le site'
-  #    add_print_site_banner: false
-  #    # Table of contents
-  #    add_table_of_contents: true
-  #    toc_title: 'Table des matières'
-  #    toc_depth: 6
-  #    # Content-related
-  #    add_full_urls: true
-  #    enumerate_headings: true
-  #    enumerate_figures: true
-  #    add_cover_page: true
-  #    cover_page_template: "docs/custom_cover_page.tpl"
-  #    # https://timvink.github.io/mkdocs-print-site-plugin/how-to/cover_page.html
-  #    path_to_pdf: ""
-  #    include_css: true
-  #    enabled: true
+  - print-site:
+      add_to_navigation: true
+      print_page_title: 'Imprimer le site'
+      add_print_site_banner: false
+      # Table of contents
+      add_table_of_contents: true
+      toc_title: 'Table des matières'
+      toc_depth: 6
+      # Content-related
+      add_full_urls: true
+      enumerate_headings: true
+      enumerate_figures: true
+      add_cover_page: true
+      cover_page_template: "docs/custom_cover_page.tpl"
+      # https://timvink.github.io/mkdocs-print-site-plugin/how-to/cover_page.html
+      path_to_pdf: ""
+      include_css: true
+      enabled: true
 
 extra_css:
     - docs/custom.css
