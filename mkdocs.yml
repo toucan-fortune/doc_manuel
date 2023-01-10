@@ -1,4 +1,93 @@
-site_name: My Docs
+# https://www.mkdocs.org/
+site_name: Manuel
+site_description: à faire
+site_author: Toucan Fortuné (à faire, à faire)
+repo_url: https://github.com/toucan-fortune/manuel/tree/main
+repo_name: toucan-fortune/manuel
+
+nav:
+  - Accueil: index.md
+  - Noeud: noeud.md
+  - Pont: pont.md
+  - Tableau: tableau.md
+
+plugins:
+  - search:
+      lang: fr
+  #- search.suggest
+  #- search.highlight
+  # https://timvink.github.io/mkdocs-print-site-plugin/index.html
+  - print-site:
+      add_to_navigation: true
+      print_page_title: 'Imprimer le site'
+      add_print_site_banner: false
+      # Table of contents
+      add_table_of_contents: true
+      toc_title: 'Table des matières'
+      toc_depth: 6
+      # Content-related
+      add_full_urls: true
+      enumerate_headings: true
+      enumerate_figures: true
+      add_cover_page: true
+      cover_page_template: "docs/custom_cover_page.tpl"
+      # https://timvink.github.io/mkdocs-print-site-plugin/how-to/cover_page.html
+      path_to_pdf: ""
+      include_css: true
+      enabled: true
+
+extra_css:
+    - docs/custom.css
+    
 theme:
+  # https://squidfunk.github.io/mkdocs-material/
   name: material
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: amber
+      accent: green
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: amber
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  language: fr
+  logo: assets/favicon-32x32b.png
+  favicon: assets/favicon.ico
+  features:
+    #- navigation.sections
+    #- navigation.expand
+    - toc.follow 
+    - toc.integrate
+    - navigation.top
+    - content.action.view
+
+markdown_extensions:
+  # https://squidfunk.github.io/mkdocs-material/reference
+  # https://squidfunk.github.io/mkdocs-material/reference/admonitions/
+  - abbr
+  - admonition
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/
+  - pymdownx.details  # admonition
+  - pymdownx.caret  # ^ ^
+  - pymdownx.tilde  # ~ ~
+  - pymdownx.keys  # keys
   

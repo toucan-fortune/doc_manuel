@@ -1,3 +1,5 @@
 # Manuel
 
-Manuel d'utilisation, documentation 
+Manuel d'utilisation, documentation
+
+toucan-fortune.github.io/manuel
