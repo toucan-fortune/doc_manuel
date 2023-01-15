@@ -1,7 +1,7 @@
 # Document de conception
 
-Document comportant les schémas des composants, les diagrammes d'activités, de classes, d'états et le modèle de base de données.
+Document comportant les diagrammes et les explications.
 
-Manuel de l'usager.
+Manuel de l'utilisateur.
 
-<a href="https://toucan-fortune.github.io/manuel/"  target="_blank">Site</a>
+Consulter le site web.
