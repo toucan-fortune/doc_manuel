@@ -1,3 +1,0 @@
-# Tableau de bord
-
-explications

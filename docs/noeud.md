@@ -1,3 +1,0 @@
-# Noeud
-
-explications

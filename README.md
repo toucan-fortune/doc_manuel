@@ -1,5 +1,7 @@
-# Manuel
+# Document de conception
 
-Manuel d'utilisation, documentation
+Document comportant les schémas des composants, les diagrammes d'activités, de classes, d'états et le modèle de base de données.
 
-toucan-fortune.github.io/manuel
+Manuel de l'usager.
+
+<a href="toucan-fortune.github.io/manuel"  target="_blank">Site</a>
