@@ -4,4 +4,4 @@ Document comportant les schémas des composants, les diagrammes d'activités, de
 
 Manuel de l'usager.
 
-<a href="toucan-fortune.github.io/manuel"  target="_blank">Site</a>
+<a href="https://toucan-fortune.github.io/manuel/"  target="_blank">Site</a>
