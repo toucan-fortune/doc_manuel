@@ -1,5 +1,5 @@
 # https://www.mkdocs.org/
-site_name: Document de conception
+site_name: Documentation de conception
 site_description: à faire
 site_author: Toucan Fortuné (à faire, à faire)
 repo_url: https://github.com/toucan-fortune/manuel/tree/main
@@ -7,8 +7,8 @@ repo_name: toucan-fortune/manuel
 
 nav:
   - Accueil: index.md
-  - Conception: conception.md
-  - Manuel: manuel.md
+  - Diagrammes et description: description.md
+  - Manuel de l'utilisateur: manuel.md
 
 plugins:
   - search:

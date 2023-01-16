@@ -1,6 +1,4 @@
-# Mnauel
-
-Manuel de l'utilisateur
+# Manuel de l'utilisateur
 
 activer le RPi Pico
 

@@ -30,4 +30,4 @@
 	- hébergement sur GitHub
 	- contruction du site avec Streamlit Cloud 
 
-[^mqtt]: note
+[^mqtt]: Message Queuing Telemetry Transport.

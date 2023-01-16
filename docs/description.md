@@ -1,4 +1,4 @@
-# Conception
+# Diagrammes et description
 
 explications
 
@@ -14,11 +14,10 @@ explications
 
 ## Listes
 
-- matériel
+- Bill of material, matériel
 - logiciels, modules
-- services
+- services web
 - db
-
 - ?
 
 ## Diagrammes d'activité
@@ -46,3 +45,7 @@ explications, RPi Pico (programmation fonctionnelle et de classe), aucune sur St
 explications, NoSLQ, bd, collections, documents
 
 ![](img/modele_bd_json.png)
+
+## Schéma de conception
+
+Fritzing x 2
