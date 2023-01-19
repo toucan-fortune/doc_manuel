@@ -1,0 +1,18 @@
+Pour la documentation: imaginez que quelqu'un doit continuer votre projet. Qu'à-t-il besoin de savoir faire? (lister les choses à installer, comment configurer votre programme, etc.)
+Pour le rapport final: 
+Expliquez ce que vous avez fait et présenter vos résultats.
+
+Pour la présentation, voici le plan:
+- Présentation et démonstration du projet final
+- Explication des choix techniques et difficultés techniques rencontrées
+- Explication du travail en équipe et des difficultés rencontrées
+- Retour sur ce que vous avez appris du travail en équipe
+
+Chaque membre de l'équipe doit présenter, sinon c'est 0. Vous pouvez faire un diaporama (fortement conseillé) ou utiliser votre rapport final. On en environs 15min/personnes + les questions.
+---
+pas de tests parce que l'architecture du site est encore incertaine
+beaucoup de changements en cours de route, d'ajustement face à des problèmes
+par exemple, la façon de construire l'asynchrone qui demeure un proto
+réfléchir avec architecte, expert
+POO pour la scalability
+

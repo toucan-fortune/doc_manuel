@@ -1,33 +1,35 @@
 # Accueil
 
-## Projet intégrateur
+## Projet
 
-- explication (sommaire) du projet
-- sommaire du cdec et docéquipe
+L'objectif est de construire une chaine calqués sur le modèle d'AIoICanada. À partir d'un objet -- un capteur, qui mesure des données environnementales quelconque, branché sur un microcontrôleur quelconque --, des données brutes et des statistiques issues de calculs à la pointe[^pointe] parcourent divers composants pour arriver dans une interface -- comme une tableau de bord.
 
-## Idée
+[^pointe]: Communément qualifié de *edge computing*.
 
-- explication de l'origine et de l'utilité
-- sommaire du cdec et docéquipe
+![Diagramme d'AIoTCanada](img/aiotcanada2.jpg)
 
-## Séquence
+![Diagramme d'AIoTCanada](img/aiotcanada1.jpg)
 
-- explication des étapes du pipeline
+PLUS: sommaire du CdeC
 
-- noeud: RPi Pico, abbreviation
-	- 1 noeud
-	- 3 noeuds, plus tard
-	- émetteur LoRa, plus tard
-	- 3^e^ noeud FOMO, plus tard
-- pont
-	- passerelle WiFi via serveur MQTT[^mqtt] et service MQTT
-		- serveur Mosquitto et ?
-		- serveur HiveHQ et ?
-	- passerelle LoRaWAN, The Things Network, serveur MQTT, plus tard
-- base de données: MongoDB Atlas
-- tableau de bord: Streamlit
-	- importation des données de Atlas dans Streamlit
-	- hébergement sur GitHub
-	- contruction du site avec Streamlit Cloud 
+## Idée du projet
 
-[^mqtt]: Message Queuing Telemetry Transport.
+Pour appliquer cette, nous nous sommes inspirés d'un article du magazine Elektor (version française) de juillet/août 2021.
+
+L'article propose un projet de labo: LoRa avec le Raspbery Pi Pico, S'amuser avec MicroPython. Le projet consiste à capter des températures, de les transmettre via un réseau LoRaWAN. Ensuite, le flux de données est récupéré en temps réel grâce à un service MQTT pour être affiché sur une interface web Node-RED fonctionnant sur un Raspberry Pi.
+
+![Article d'Elektor](img/elektor1.jpg)
+
+## Application du projet
+
+Ce genre de projet est classique en IoT. La valeur provient de la gestion de données. Une fois l'infrastructure en place, les données captées et les autres données obtenues par calculs à la pointe ou dans le tableau de bord permettent de renseigner les utilisateurs à des fins de gestions des revenus et des coûts.
+
+Les usages sont nombreux:
+
+- mesures automatisées,
+- contrôle des états, de la qualité,
+- prévention de pertes, d'accidents,
+- alertes,
+- etc. 
+
+PLUS: sommaire du CdeC

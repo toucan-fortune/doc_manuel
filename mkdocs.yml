@@ -7,8 +7,9 @@ repo_name: toucan-fortune/manuel
 
 nav:
   - Accueil: index.md
-  - Diagrammes et description: description.md
+  - Description et diagramme: description.md
   - Manuel de l'utilisateur: manuel.md
+  - Sources et codes: sources.md
 
 plugins:
   - search:
