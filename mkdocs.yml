@@ -1,7 +1,7 @@
 # https://www.mkdocs.org/
 site_name: Documentation de conception
-site_description: à faire
-site_author: Toucan Fortuné (à faire, à faire)
+site_description: Documentation de conception
+site_author: Toucan Fortuné
 repo_url: https://github.com/toucan-fortune/manuel/tree/main
 repo_name: toucan-fortune/manuel
 
@@ -44,7 +44,7 @@ theme:
     text: Roboto
     code: Roboto Mono
   language: fr
-  logo: img/android-chrome-192x192.png
+  logo: img/android-chrome-192x192.jpg
   favicon: img/favicon.ico
   features:
     #- navigation.sections
