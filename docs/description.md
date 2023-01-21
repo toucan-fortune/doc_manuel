@@ -1,4 +1,4 @@
-# Description et diagramme
+# Description et diagrammes
 
 Nous avons planifié le projet comme une première phase à un projet plus large. À la fin de cette phase, nous devrions avoir un application fonctionnelle. Les phases ultérieures ne serviraient qu'à améliorer l'application.
 

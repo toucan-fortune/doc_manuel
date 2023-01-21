@@ -2,14 +2,14 @@
 
 ## Codes sources
 
-La majorité des codes sources se trouvent sur GitHub: https://github.com/toucan-fortune
+La majorité des [codes sources se trouvent sur GitHub](https://github.com/toucan-fortune).
 
 Sur certains repo, il y a aussi des liens vers un site web.
 
 - Par exemple, [le repo du Tableau de bord Streamlit](https://github.com/toucan-fortune/streamlit_projet_integrateur)
-- [le site Streamlit](https://toucan-fortune-streamlit-projet-integrateur-01-accueil-0fsbkp.streamlit.app/)
-- Le [repo de la documentation de conception avec MkDocs](https://github.com/toucan-fortune/doc_manuel)
-- [le site MkDocs](https://toucan-fortune.github.io/doc_manuel/)
+    - [Le site Streamlit](https://toucan-fortune-streamlit-projet-integrateur-01-accueil-0fsbkp.streamlit.app/)
+- [Le repo de la documentation de conception avec MkDocs](https://github.com/toucan-fortune/doc_manuel)
+    - [Le site MkDocs](https://toucan-fortune.github.io/doc_manuel/)
 
 ## Codes sources UML
 
