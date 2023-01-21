@@ -2,15 +2,13 @@
 
 ## Projet
 
-L'objectif est de construire une chaine calquée sur le modèle d'AIoICanada. À partir d'un objet -- un capteur, qui mesure des données environnementales quelconques, branchées sur un microcontrôleur quelconque --, des données brutes et des statistiques issues de calculs à la pointe[^pointe] parcourent divers composants pour arriver dans une interface -- comme un tableau de bord.
+L'objectif est de construire une chaine calquée sur le modèle d'AIoICanada. Un objet mesure des données environnementales quelconques, des données brutes et des statistiques issues de calculs à la pointe[^pointe]. Les données parcourent divers composants pour arriver dans une interface; comme un tableau de bord.
 
 [^pointe]: Communément qualifié de *edge computing*.
 
 ![Diagramme d'AIoTCanada](img/aiotcanada2.jpg)
 
 ![Diagramme d'AIoTCanada](img/aiotcanada1.jpg)
-
-??? sommaire du CdeC
 
 ## Idée du projet
 
@@ -20,7 +18,7 @@ L'article propose un projet de labo: LoRa avec le Raspbery Pi Pico, S'amuser ave
 
 ![Article d'Elektor](img/elektor1.jpg)
 
-## Application du projet
+## Application générale du projet
 
 Ce genre de projet est classique en IoT. La valeur provient de la gestion de données. Une fois l'infrastructure en place, les données captées et les autres données obtenues par calculs à la pointe ou dans le tableau de bord permettent de renseigner les utilisateurs à des fins de gestions des revenus et des coûts.
 
@@ -31,8 +29,6 @@ Les usages sont nombreux:
 - prévention de pertes, d'accidents,
 - alertes,
 - etc. 
-
-??? sommaire du CdeC
 
 ## Exemple d'application
 

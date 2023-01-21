@@ -51,7 +51,7 @@ Tous les composants décrits plus haut ne sont pas des composants de stockage de
 
 Consulter le **Diagramme de déploiement (LoRa)**, plus bas.
 
-## ajustements
+## Ajustements
 
 Cependant, la mise en place d'un réseau LoRaWAN est un investissement en temps et argent pour des particuliers. Une entreprise dispose de plus de ressources et le LoRa reste abordable comparé aux solutions de rechange. Si les échéanciers sont serrés et le budget est limité, le LoRa n'est pas la meilleure option pour débuter la mise en place d'une chaine IoT.
 
@@ -101,11 +101,13 @@ Concentrons-nous sur ce qui se déroule à chaque bout de la chaine IoT.
 
 ### Raspberry Pi Pico
 
-???
+??? mettre à jour, coller les images
 
 ### Streamlit
 
-Avec son architecture actuelle, notre site n'est pas optimal.
+Avec son architecture actuelle, notre site n'est pas optimal:
+
+https://toucan-fortune-streamlit-projet-integrateur-01-accueil-0fsbkp.streamlit.app/
 
 Nous avons beaucoup appris comment faire les choses et, surtout, quoi éviter. Le site requiert une refonte.
 
@@ -133,8 +135,6 @@ Le patron préconise:
 - 1 document par noeud par métrique (température, humidité, etc.) par jour ou
 - 1 document par noeud par appareil (noeud 1 de température, noeud 2 d'humidité, etc.) par jour.
 
-![Patron ou modèle de document](img/modele_bd_json.jpg)
-
 À des fins expérimentales, nous avons utilisé 1 collection de 1 document par noeud par métrique par mesure. Chaque document consiste en une valeur unique.
 
 ![Notre modèle de document](img/modele_bd_json.png)
@@ -151,13 +151,13 @@ Pour le développement, Windows n'a pas les pilotes de la connexion en série (S
 
 Notre but est que le Pico envoie des données à MongoDB Atlas. Par contre, nous pouvons simuler des données sur Windows et téléverser des données avec Compass, via des fichiers CSV ou JSON ou directement avec le module pymongo.
 
-Avec le Pico, il faut passer par un serveur MQTT, ???Mosquitto, installé sur un ordinateur Windows. Le Pico, via le WiFi, communique avec le serveur sur le PC. Le PC achemine le flux de données à un service MQTT: MyQtt.
+Avec le Pico, il faut passer par un serveur MQTT (Mosquitto) installé sur un ordinateur Windows. Le Pico, via le WiFi, communique avec le serveur sur le PC. Le PC achemine le flux de données à un service MQTT: MyQttHub.
 
-???Mosquitto, HiveHQ
+Nous aurions voulu tester le service HiveMQ, mais nous n'avons pas eu le temps.
 
-Ensuite, le service MQTT envoie le flux de données à MongoDB Atlas.
+Ensuite, le service MyQttHub envoie le flux de données à MongoDB Atlas.
 
-??? PubNub (Optionnel)
+Nous aurions également voulu tester le service PubNub; une solution de rechange à MyQttHub. Nous n'avons pas eu le temps.
 
 Nous voulions garder de la marge de manoeuvre avec plusieurs possibilités à chaque étape de la chaine. Si une option flanchait, l'autre option deviendrait utile.
 
@@ -213,9 +213,7 @@ Toutes ces péripéties nous ont fait perdre beaucoup de temps de développement
 
 Pour cette phase du projet, nous avions des ambitions de calculs à la pointe avec les données brutes: moyennes, contrôle de flux à certaines températures, alertes, etc. Toutes ces données constituent des envois différents à la base de données. La valeur obtenue réside dans le fait que l'objet fait une bonne partie de l'analytique et ne fait pas qu'émettre des données brutes.
 
-L'investissement de temps à régler des problèmes nous a fait reculer sur d'autres options:
-
-???HiveHQ, PubNub
+L'investissement de temps à régler des problèmes nous a fait reculer sur d'autres options: HiveMQ et PubNub.
 
 ### Succès
 
@@ -243,23 +241,15 @@ C'est quand même une formidable expérience d'apprentissage. Beaucoup de nouvel
 
 Malgré que nous n'avons pas complété les exigences du produit final, nous avons une base solide qui nous servira lors des prochaines phases.
 
-Websocket
+Nous aimerions essayer:
 
-???HiveHQ
-
-???PubNub,
-
-???protocole I2C
-
-scale de 1 à 3
-
-LoRa
-
-une fois les 1 noeud en place et une passerelle, on pourrait installer jusqu'à 500 noeuds
-
-envoi à tous les 10s, 30s, 10min, 1h, 1j, 1sem, selon le capteur
-
-ajuster le tableau de bord dans ces nouvelles conditions
+- Websocket pour la communication directe entre le microcontrôleur et le PC (ou 2 PC); une sorte de LAN.
+- HiveHQ
+- PubNub
+- Un autre microcontrôleur et/ou le langage C/C++ pour faire fonctionner le protocole I2C avec le capteur de température.
+- Une mise à l'échelle de 1 microcontrôleur à 3 (ou plus) microcontrôleurs.
+- LoRa et LoRaWAN.
+- Ajuster le tableau de bord dans ces nouvelles conditions.
 
 ## Expérience avec Streamlit
 
