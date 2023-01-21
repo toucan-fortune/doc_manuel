@@ -9,6 +9,7 @@ nav:
   - Accueil: index.md
   - Description et diagramme: description.md
   - Sources et codes: sources.md
+  - Références: references.md
 
 plugins:
   - search:
