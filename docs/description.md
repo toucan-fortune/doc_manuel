@@ -97,7 +97,7 @@ Concentrons-nous sur ce qui se déroule à chaque bout de la chaine IoT.
 
 ![Diagramme d'état de Streamlit](img/diagramme_etat_streamlit.png)
 
-## Diagramme de classes
+## Diagrammes de classes
 
 ### Raspberry Pi Pico
 
