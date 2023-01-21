@@ -4,11 +4,11 @@
 
 La majorité des [codes sources se trouvent sur GitHub](https://github.com/toucan-fortune).
 
-Sur certains repo, il y a aussi des liens vers un site web.
+Sur certains dépôts, il y a aussi des liens vers un site web.
 
-- Par exemple, [le repo du Tableau de bord Streamlit](https://github.com/toucan-fortune/streamlit_projet_integrateur)
+- Par exemple, [le dépôt du Tableau de bord Streamlit](https://github.com/toucan-fortune/streamlit_projet_integrateur)
     - [Le site Streamlit](https://toucan-fortune-streamlit-projet-integrateur-01-accueil-0fsbkp.streamlit.app/)
-- [Le repo de la documentation de conception avec MkDocs](https://github.com/toucan-fortune/doc_manuel)
+- [Le dépôt de la documentation de conception avec MkDocs](https://github.com/toucan-fortune/doc_manuel)
     - [Le site MkDocs](https://toucan-fortune.github.io/doc_manuel/)
 
 ## Codes sources UML
@@ -339,9 +339,9 @@ Inactif--> [*]
 
 ### Autres diagrammes
 
-D'autres diagrammes n'ont pas été utilisé, car inutiles:
+D'autres diagrammes n'ont pas été utilisés, car inutiles:
 
-- aucun diagrammme d'utilisation (*use case*); pas d'usager de logiciel, produit;
+- aucun diagramme d'utilisation (*use case*); pas d'usager de logiciel, produit;
 - aucun diagramme de séquence (*use case*); idem;
 - aucun diagramme de paquetage; aucun logiciel complexe.
 
