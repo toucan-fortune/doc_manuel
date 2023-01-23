@@ -10,6 +10,7 @@ nav:
   - Description et diagrammes: description.md
   - Codes sources et outils: sources.md
   - Références: references.md
+  - Sources: sources.md
 
 plugins:
   - search:

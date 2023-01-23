@@ -4,7 +4,7 @@ Nous avons planifié le projet comme une première phase à un projet plus large
 
 ## Planification
 
-Divers protocoles sans-fils sont utilisés en IoT; chaque a ses applications, ses avantages et ses faiblesses. LoRa est un protocole qui permet de transmettre de petits débits de données sures de longues portées.
+Divers protocoles sans-fils sont utilisés en IoT; chacun a ses applications, ses avantages et ses faiblesses. LoRa est un protocole qui permet de transmettre de petits débits de données sur de longues portées.
 
 ![Réseaux en IoT](img/reseaux.jpg)
 
