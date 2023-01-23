@@ -1,0 +1,759 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation de conception">
+      
+      
+        <meta name="author" content="Toucan Fortuné">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../sources/">
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Description et diagrammes - Documentation de conception</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../docs/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="green">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#description-et-diagrammes" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Documentation de conception" class="md-header__button md-logo" aria-label="Documentation de conception" data-md-component="logo">
+      
+  <img src="../img/android-chrome-192x192.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation de conception
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Description et diagrammes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/toucan-fortune/manuel/tree/main" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    toucan-fortune/manuel
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentation de conception" class="md-nav__button md-logo" aria-label="Documentation de conception" data-md-component="logo">
+      
+  <img src="../img/android-chrome-192x192.jpg" alt="logo">
+
+    </a>
+    Documentation de conception
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/toucan-fortune/manuel/tree/main" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    toucan-fortune/manuel
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Description et diagrammes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Description et diagrammes
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#planification" class="md-nav__link">
+    Planification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajustements" class="md-nav__link">
+    Ajustements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrammes-de-deploiement" class="md-nav__link">
+    Diagrammes de déploiement
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrammes-dactivite-et-detat" class="md-nav__link">
+    Diagrammes d'activité et d'état
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrammes d'activité et d'état">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-pico" class="md-nav__link">
+    Raspberry Pi Pico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlit" class="md-nav__link">
+    Streamlit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagrammes-de-classes" class="md-nav__link">
+    Diagrammes de classes
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrammes de classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-pico_1" class="md-nav__link">
+    Raspberry Pi Pico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlit_1" class="md-nav__link">
+    Streamlit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modele-de-base-de-donnees" class="md-nav__link">
+    Modèle de base de données
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experience-avec-le-raspberry-pi-pico" class="md-nav__link">
+    Expérience avec le Raspberry Pi Pico
+  </a>
+  
+    <nav class="md-nav" aria-label="Expérience avec le Raspberry Pi Pico">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developpement" class="md-nav__link">
+    Développement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difficultes" class="md-nav__link">
+    Difficultés
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#succes" class="md-nav__link">
+    Succès
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#experience-avec-streamlit" class="md-nav__link">
+    Expérience avec Streamlit
+  </a>
+  
+    <nav class="md-nav" aria-label="Expérience avec Streamlit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#developpement_1" class="md-nav__link">
+    Développement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difficultes_1" class="md-nav__link">
+    Difficultés
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#succes_1" class="md-nav__link">
+    Succès
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion_1" class="md-nav__link">
+    Conclusion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        Codes sources et outils
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        Références
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+    
+      
+    
+    <a href="https://github.com/toucan-fortune/manuel/tree/main/raw/master/docs/description.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+
+<h1 id="description-et-diagrammes">Description et diagrammes<a class="headerlink" href="#description-et-diagrammes" title="Permanent link">&para;</a></h1>
+<p>Nous avons planifié le projet comme une première phase à un projet plus large. À la fin de cette phase, nous devrions avoir un application fonctionnelle. Les phases ultérieures ne serviraient qu'à améliorer l'application.</p>
+<h2 id="planification">Planification<a class="headerlink" href="#planification" title="Permanent link">&para;</a></h2>
+<p>Divers protocoles sans-fils sont utilisés en IoT; chacun a ses applications, ses avantages et ses faiblesses. LoRa est un protocole qui permet de transmettre de petits débits de données sur de longues portées.</p>
+<p><img alt="Réseaux en IoT" src="../img/reseaux.jpg" /></p>
+<p>Le LoRa est très prisé en IoT. Ses avantages sont nombreux. Il est surtout connu pour:</p>
+<ul>
+<li>sa faible consommation d'énergie et sa longue durée,</li>
+<li>sa longue portée,</li>
+<li>son faible coût de déploiement et</li>
+<li>sa sécurité</li>
+</ul>
+<p><img alt="Avantages du LoRa" src="../img/schema_advantages-of-lorawan.jpg" /></p>
+<p>Un noeud (<em>node</em>), incluant un microcontrôleur, un capteur et un émetteur-récepteur LoRa, consomme peu d'énergie.</p>
+<p><img alt="Noeud LoRa avec Pico" src="../img/elektor2.jpg" /></p>
+<p><img alt="Noeud LoRa avec ESP32" src="../img/montage_noeud_lora.jpg" /></p>
+<p>Un microcontrôleur de 3V consomme peu d'énergie (mesuré en mAh); la durée de vie des piles dépasse 1 an. Avec un système de recharge par panneau solaire, la durée de vie de la source d'alimentation se compte en années.<sup id="fnref:annees"><a class="footnote-ref" href="#fn:annees">1</a></sup></p>
+<p>Ensuite, le noeud est ajouté à un réseau LoRaWAN. Il faut mettre en place ce réseau.</p>
+<p><img alt="Réseau LoRaWAN" src="../img/lorawan_network.jpg" /></p>
+<p>Les émissions d'une centaine de noeuds peuvent être captées par une passerelle (<em>gateway</em>). Grâce à la longue portée du LoRa, un parc de noeuds pourrait s'étaler sur plusieurs kilomètres carrés.</p>
+<p><img alt="Passerelle LoRaWAN intérieure" src="../img/passerelle_interieure.jpg" /></p>
+<p>Un passerelle extérieure, de gamme industrielle, située en hauteur maximise la couverture du réseau.</p>
+<p>Avec un bon paramétrage, une passerelle à 8 canaux peut gérer le trafic de centaines de noeuds. La mise en place d'un réseau comptant des noeuds et une passerelle est très abordable comparée à d'autres technologies.</p>
+<p>Il est possible de construire une passerelle simple avec une carte LoRaWAN et un Raspberry Pi.</p>
+<p><img alt="Passerelle Raspberry Pi-LoRaWAN" src="../img/passerelle_rpi4.jpg" /></p>
+<p>Un noeud peut mesurer son environnement chaque minute ou chaque heure, par exemple. À intervalles de temps déterminé, possiblement plus étendues que les intervalles des mesures, le noeud peut envoyer de petits messages à la passerelle comme des listes en MicroPython ou des arrays en C.</p>
+<p>La passerelle achemine le flux de données vers des serveurs (applications, réseau et sécurité). Il est possible d'héberger les serveurs in situ, au coeur du réseau LoRaWAN. Cette solution requiert un investissement de base, de l'expertise pour son exploitation et des frais de gestion. La solution de rechange est d'impartir ces responsabilités. La passerelle achemine alors le flux de données vers des services par Internet: The Things' Network (ouvert), The People's Network (ouvert avec une chaine de blocs), The Things' Industries (payant, pour des usages industriels).</p>
+<p>Tous les composants décrits plus haut ne sont pas des composants de stockage des données. Les données doivent être récupérées dans une base de données quelconque.</p>
+<p>Consulter le <strong>Diagramme de déploiement (LoRa)</strong>, plus bas.</p>
+<h2 id="ajustements">Ajustements<a class="headerlink" href="#ajustements" title="Permanent link">&para;</a></h2>
+<p>Cependant, la mise en place d'un réseau LoRaWAN est un investissement en temps et argent pour des particuliers. Une entreprise dispose de plus de ressources et le LoRa reste abordable comparé aux solutions de rechange. Si les échéanciers sont serrés et le budget est limité, le LoRa n'est pas la meilleure option pour débuter la mise en place d'une chaine IoT.</p>
+<p>Une passerelle Raspberry Pi coûte le prix d'un kit Raspberry Pi plus une carte LoRaWAN (entre 150 et 200$C). Or, cette option était en rupture d'inventaire dans les boutiques et chez les fournisseurs en ligne ou le délai d'expédition était très long (6 semaines). Sinon, il faut se tourner vers des passerelles plus chères (300$C+) ou de gamme industrielle (500$C+). </p>
+<p>Les autres composants ne sont pas chers et facilement disponibles: un Raspberry Pi Pico (ou un ESP32), un émetteur-récepteur LoRa et un capteur de température se chiffrent à moins de 20$C chacun.</p>
+<p>Le LoRa reste une technologie qui requiert une bonne étude pour la faire fonctionner.</p>
+<p>Afin de démarrer plus rapidement et sans trop dépenser, nous nous sommes tournés vers le WiFi. Le Raspberry Pi Pico est disponible dans une version WiFi/Bluetooth. Ce qui permet d'utiliser un ordinateur comme passerelle pour capter les signaux du Pico. Nous pouvons ensuite envoyer le flux de données dans la chaine IoT.</p>
+<p>Consulter le <strong>Diagramme de déploiement (WiFi)</strong>, plus bas. La deux chaines IoT (LoRa vs. WiFi) sont assez similaires. </p>
+<h2 id="diagrammes-de-deploiement">Diagrammes de déploiement<a class="headerlink" href="#diagrammes-de-deploiement" title="Permanent link">&para;</a></h2>
+<p>Par rapport à la chaine IoT de l'article d'Elektor, nous remplaçons Node-RED par Streamlit pour construire une interface web.</p>
+<p><img alt="Diagramme de déploiement (LoRa)" src="../img/diagramme_deploiement_lora.png" /></p>
+<p>La chaine IoT de rechange WiFi permet de démarrer plus rapidement sans trop dépenser d'argent.</p>
+<p><img alt="Diagramme de déploiement (WiFi)" src="../img/diagramme_deploiement_wifi.png" /></p>
+<p>Nous allons éventuellement revenir vers le LoRa après un temps d'étude de cette technologie. La chaine IoT sera toujours en place. Il existe d'excellent ouvrages disponibles gratuitement en ligne comme le manuel LoRa - LoRaWAN et l'Internet des Objets de l'Université Savoie-Mont-Blanc. L'Université offre aussi des cours sur Udemy. Ce ne sont pas les ressources qui manquent en ligne.</p>
+<p>Une fois la base de données en place, elle peut servir à davantage qu'à alimentation du tableau de bord.</p>
+<p><img alt="Diagramme de déploiement (plus)" src="../img/diagramme_deploiement_plus.png" /></p>
+<h2 id="diagrammes-dactivite-et-detat">Diagrammes d'activité et d'état<a class="headerlink" href="#diagrammes-dactivite-et-detat" title="Permanent link">&para;</a></h2>
+<p>Concentrons-nous sur ce qui se déroule à chaque bout de la chaine IoT.</p>
+<h3 id="raspberry-pi-pico">Raspberry Pi Pico<a class="headerlink" href="#raspberry-pi-pico" title="Permanent link">&para;</a></h3>
+<p><img alt="Diagramme d'activité Pico" src="../img/diagramme_activite_pico.png" /></p>
+<p><img alt="Diagramme d'état du Pico" src="../img/diagramme_etat_pico.png" /></p>
+<h3 id="streamlit">Streamlit<a class="headerlink" href="#streamlit" title="Permanent link">&para;</a></h3>
+<p><img alt="Diagramme d'activité Streamlit" src="../img/diagramme_activite_streamlit.png" /></p>
+<p><img alt="Diagramme d'état de Streamlit" src="../img/diagramme_etat_streamlit.png" /></p>
+<h2 id="diagrammes-de-classes">Diagrammes de classes<a class="headerlink" href="#diagrammes-de-classes" title="Permanent link">&para;</a></h2>
+<h3 id="raspberry-pi-pico_1">Raspberry Pi Pico<a class="headerlink" href="#raspberry-pi-pico_1" title="Permanent link">&para;</a></h3>
+<p>??? mettre à jour, coller les images</p>
+<h3 id="streamlit_1">Streamlit<a class="headerlink" href="#streamlit_1" title="Permanent link">&para;</a></h3>
+<p>Avec son architecture actuelle, notre site n'est pas optimal:</p>
+<p>https://toucan-fortune-streamlit-projet-integrateur-01-accueil-0fsbkp.streamlit.app/</p>
+<p>Nous avons beaucoup appris comment faire les choses et, surtout, quoi éviter. Le site requiert une refonte.</p>
+<p>Dans son état actuel, le site n'utilise que de la programmation fonctionnelle (fonctions, constantes, variables, dont les variables <em>session_state</em> de Streamlit).</p>
+<p>Étant donné qu'il est possible de mettre le site à l'échelle pour gérer le flux de données de centaines d'objets, il faut penser construire le site avec de la programmation orientée objet (avec des classes). Cela demande un temps de réflexion et de planification.</p>
+<p>Il faudrait consulter des experts du web pour établir les parallèles entre un autre cadriciel et Streamlit. Ce travail est nécessaire pour mieux comprendre la partie <em>back-end</em> qui reste assez opaque. Il est nécessaire de construire un site avec une bonne architecture pour assurer un fonctionnement fluide, une bonne expérience utilisateur et éviter les problèmes lors de mise à l'échelle (<em>scaling</em>).</p>
+<h2 id="modele-de-base-de-donnees">Modèle de base de données<a class="headerlink" href="#modele-de-base-de-donnees" title="Permanent link">&para;</a></h2>
+<p>Un IoT, il est possible de stocker les données dans des bases de données SQL ou NoSLQ. Nous avons choisi MongoDB. </p>
+<p>Selon l'article en ligne Building with Patterns: A Summary, de MongoDB, il existe divers patrons de conception de collections et de documents.</p>
+<p><img alt="Patrons de conception" src="../img/patterns_matrix.jpg" /></p>
+<p>Le patron Bucket est préconisé en IoT comme démontré dans le cours M100 de Mongo University: MongoDB for SQL Pros.</p>
+<p><img alt="Patrons de conception" src="../img/bucket_pattern.jpg" /></p>
+<p>Le patron préconise:
+.png
+- 1 collection pour un parc de noeuds,
+- 1 document par noeud par métrique (température, humidité, etc.) par jour ou
+- 1 document par noeud par appareil (noeud 1 de température, noeud 2 d'humidité, etc.) par jour.</p>
+<p>À des fins expérimentales, nous avons utilisé 1 collection de 1 document par noeud par métrique par mesure. Chaque document consiste en une valeur unique.</p>
+<p><img alt="Notre modèle de document" src="../img/modele_bd_json.png" /></p>
+<p>Notre modèle de documents génère beaucoup de données rapidement pour tester. Nous pourrions passer au patron Bucket une fois le système stabilisé. Chaque document consisterait en une structure de données pour toutes les mesures de la journée.</p>
+<h2 id="experience-avec-le-raspberry-pi-pico">Expérience avec le Raspberry Pi Pico<a class="headerlink" href="#experience-avec-le-raspberry-pi-pico" title="Permanent link">&para;</a></h2>
+<h3 id="developpement">Développement<a class="headerlink" href="#developpement" title="Permanent link">&para;</a></h3>
+<p>Pour le développement, Windows n'a pas les pilotes de la connexion en série (Serial USB) afin de se connecter au Pico et de téléverser des codes sources en MicroPython. Le développement préparatoire peut se faire en Windows, mais pour embarquer un code source sur le Pico, il faut le faire avec une distribution Linux. Nous avons utilisé la distribution Linux Mint avec une machine virtuelle sur Windows.</p>
+<p><img alt="Mint" src="../img/mint20-cinnamon.jpg" /></p>
+<p>Notre but est que le Pico envoie des données à MongoDB Atlas. Par contre, nous pouvons simuler des données sur Windows et téléverser des données avec Compass, via des fichiers CSV ou JSON ou directement avec le module pymongo.</p>
+<p>Avec le Pico, il faut passer par un serveur MQTT (Mosquitto) installé sur un ordinateur Windows. Le Pico, via le WiFi, communique avec le serveur sur le PC. Le PC achemine le flux de données à un service MQTT: MyQttHub.</p>
+<p>Nous aurions voulu tester le service HiveMQ, mais nous n'avons pas eu le temps.</p>
+<p>Ensuite, le service MyQttHub envoie le flux de données à MongoDB Atlas.</p>
+<p>Nous aurions également voulu tester le service PubNub; une solution de rechange à MyQttHub. Nous n'avons pas eu le temps.</p>
+<p>Nous voulions garder de la marge de manoeuvre avec plusieurs possibilités à chaque étape de la chaine. Si une option flanchait, l'autre option deviendrait utile.</p>
+<h3 id="difficultes">Difficultés<a class="headerlink" href="#difficultes" title="Permanent link">&para;</a></h3>
+<p>Les premiers tests avec notre capteur température-humidité SEN0546 n'ont pas été concluants.</p>
+<p><img alt="Capteur de température-humidité numérique" src="../img/module_4.jpg" /></p>
+<p>D'abord, les informations sur ce capteur sont confuses.</p>
+<p>Ensuite les broches pour la connexion posent un autre problème. </p>
+<p><img alt="Broches du Pico" src="../img/pinout.jpg" /></p>
+<p><img alt="Broches du Pico" src="../img/RPI-PICO-W.jpg" /></p>
+<p>Desquelles est-il question? Physiques ou GPIO? Internet tout entier n'en parle pas. La seule documentation qui en fait allusion est le guide Get Started with MicroPython on Raspberry Pi Pico.</p>
+<p>Le MicroPython est basé sur une version ancienne de Python (3.4 ou 3.5). Comme le nom l'indique, c'est un sous-ensemble du langage complet pour microcontrôleurs. La syntaxe est légèrement différente (suffisamment pour causer de sérieux problèmes).</p>
+<p>Il faut adapter un code source Python en MicroPython lorsque l'on migre. Nous pouvons éprouver le sentiment d'être handicapé par les limites du MicroPython. Le MicroPython ne reconnait pas ou n'importe pas certaines variables, classes ou méthodes. Certains modules ne sont pas disponibles. L'affichage par <code>print()</code> est erratique; parfois effacé. </p>
+<p>La mémoire du Pico est aussi problématique. Un code source peut persister en mémoire même si le développeur fait une mise à jour. Il faut découvrir la solution: fermer Thonny, débrancher le Pico et redémarrer le tout avant de téléverser un nouveau code source.</p>
+<p>Est-ce un problème avec Thonny ou le Pico? Internet tout entier n'en parle pas.</p>
+<p>Au final, nous sommes arrivés au verdict qu'en MicroPython, les options de programmation sont limitées. Il n'a pas été possible de faire fonctionner le capteur correctement. Le capteur fournissait toujours des valeurs maximales, par exemple.</p>
+<p>Le MicroPython n'est pas le choix idéal pour le protocole I2C. Le langage n'offre pas les opérations de bas niveau (proche du processeur) comme offertes par le C/C++.</p>
+<p>En MicroPython, il aurait fallu utiliser un autre capteur. Il existe des modèles de capteurs plus simples.</p>
+<p>Le capteur de température TMP37FT9Z.</p>
+<p><img alt="Capteur de température numérique" src="../img/module_2.jpg" /></p>
+<p>Les capteurs de température et d'humidité AM2320, DHT20 ou DHT11.</p>
+<p><img alt="Capteur de température-humidité numérique" src="../img/module_3.jpg" /></p>
+<p>Peu importe le capteur, le C/C++ aurait été un meilleur langage pour avoir plus de marge de développement. Même qu'une solution de rechange au Pico, comme le ESP32, avec du C/C++, aurait été encore meilleure. Le ESP32 vient aussi dans une version WiFi comme le Pico.</p>
+<p><img alt="ESP32" src="../img/esp32.jpg" /></p>
+<p>L'envoi de données du Pico vers MongoDB Atlas a révélé quelques surprises, dont les quotas journaliers qui limitaient le flux de données avec le service MQTT???. Avec un compte gratuit, il existe un quota sur le nombre d'envois par jour et des délais de 250ms par envoi. Parfois l'envoi ne passe pas.</p>
+<p>Pour le développement, les tests, cette situation est problématique.</p>
+<p>Au premier abord, nous étions perplexes devant la situation. Compte tenu de tous les problèmes discutés plus haut, nous pensions qu'il s'agissait d'un autre problème avec le Pico ou avec la programmation en MicroPython. Était-ce le serveur MQTT sur le PC? Nous n'avions pas ces problèmes lorsque nous travaillions directement avec MongoDB Atlas; avec Compass ou avec un code source Python (avec le module pymongo) sur PC.</p>
+<p>Toutes ces péripéties nous ont fait perdre beaucoup de temps de développement.</p>
+<p>Pour cette phase du projet, nous avions des ambitions de calculs à la pointe avec les données brutes: moyennes, contrôle de flux à certaines températures, alertes, etc. Toutes ces données constituent des envois différents à la base de données. La valeur obtenue réside dans le fait que l'objet fait une bonne partie de l'analytique et ne fait pas qu'émettre des données brutes.</p>
+<p>L'investissement de temps à régler des problèmes nous a fait reculer sur d'autres options: HiveMQ et PubNub.</p>
+<h3 id="succes">Succès<a class="headerlink" href="#succes" title="Permanent link">&para;</a></h3>
+<p>Chaque problème, de la programmation au service MQTT, a été surmonté. Nous devions travailler avec le Pico en MicroPython pour terminer la phase du projet. Adopter le C/C++, un autre microcontrôleur et/ou un autre capteur serait pour une phase ultérieure.</p>
+<p>Grâce au capteur de température intégré au Pico, il est possible de capter une température pour l'envoyer à MongoDB Atlas.</p>
+<p>Il est aussi possible de simuler des données de température et d'humidité avec le Pico avec de simples algorithmes; et de simuler plusieurs noeuds (pico01, pico02, etc.).</p>
+<p>Une fois le système stabilisé, il est facile de retourner vers le serveur et le service MQTT; et de respecter les quotas.</p>
+<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h3>
+<p>Le Raspberry Pi Pico est abordable et facile à apprendre. Le MicroPython aussi.</p>
+<p>D'un autre côté, le MicroPython, en termes de possibilités de développement, est limité. Le langage est limité et son manque de paquets est limitatif. Le Pico doit aussi être programmé via un système d'exploitation Linux et non Windows ou Mac OS X.</p>
+<p>Toutes les étapes se sont avérées beaucoup plus longues que prévu en raison des obstacles que nous affrontions. Il y a beaucoup de  recherches (blogues, documentation en ligne, sites, tutoriels, etc.) et de lectures à faire pour s'initier à la nouvelle matière; non seulement le LoRa, mais toutes les nouvelles technologies.</p>
+<p>Voilà ce qui explique l'abandon de bien d’items que nous avions prévu faire au début du projet.</p>
+<p>Il aurait fallu consulter des experts avant d'arrêter nos choix: du microcontrôleur, du capteur, du langage de programmation, etc. Il existe toute sorte de critères à évaluer avant d'embarquer dans un projet: coûts, potentiel de programmation, performance, durabilité, consommation d'énergie, etc. Nous l'avons appris à la dure.</p>
+<p>C'est quand même une formidable expérience d'apprentissage. Beaucoup de nouvelles technologies et de précieuses leçons de développement.</p>
+<p>Malgré que nous n'avons pas complété les exigences du produit final, nous avons une base solide qui nous servira lors des prochaines phases.</p>
+<p>Nous aimerions essayer:</p>
+<ul>
+<li>Websocket pour la communication directe entre le microcontrôleur et le PC (ou 2 PC); une sorte de LAN.</li>
+<li>HiveHQ</li>
+<li>PubNub</li>
+<li>Un autre microcontrôleur et/ou le langage C/C++ pour faire fonctionner le protocole I2C avec le capteur de température.</li>
+<li>Une mise à l'échelle de 1 microcontrôleur à 3 (ou plus) microcontrôleurs.</li>
+<li>LoRa et LoRaWAN.</li>
+<li>Ajuster le tableau de bord dans ces nouvelles conditions.</li>
+</ul>
+<h2 id="experience-avec-streamlit">Expérience avec Streamlit<a class="headerlink" href="#experience-avec-streamlit" title="Permanent link">&para;</a></h2>
+<p>Nous n'avons pas utilisé Node-RED. C'est un langage de programmation assez sommaire pour développer des preuves de concept rapidement.</p>
+<p><img alt="Interface de programmation de Node-RED" src="../img/node_red.jpg" /></p>
+<p>Nous avons aussi regardé Grafana et Flutter.</p>
+<p>Nous voulions une solution avec langages écrits permettant plus de possibilités.</p>
+<p>Nous avons pensé opter pour le cadriciel Python Flask pour construire un site web avec les langages web (HTML, CSS, JS).</p>
+<p>Nous avons alors trouvé Streamlit.</p>
+<h3 id="developpement_1">Développement<a class="headerlink" href="#developpement_1" title="Permanent link">&para;</a></h3>
+<p>Streamlit est un module Python qui permet de construire des sites web et d'y incorporer facilement des modules scientifiques comme Numpy, Pandas, des modules de <em>Machine Learning</em> et d'IA. Il est possible d'y injecter un peu de HTML et de CSS. Le JS est intégré dans le code Python du module Streamlit; comme les fonctions asynchrones (<em>callback</em>), les états (<em>state</em>) et les changements d'états (<em>setState</em>).</p>
+<p>Le résultat donne un site web réactif qui s'adapte à n'importe quel écran.</p>
+<p>Le démarrage avec Streamlit est facile. Nous sommes rapidement arrivés à construire des sites web expérimentaux pour apprendre les composants du module. Il est possible d'émuler le travail sur un ordinateur.</p>
+<h3 id="difficultes_1">Difficultés<a class="headerlink" href="#difficultes_1" title="Permanent link">&para;</a></h3>
+<p>La suite a été plus ardue. Il faut du temps, plus que prévu, pour apprendre un gros module comme Streamlit. Cela fait partie des risques d'aller vers les nouveautés.</p>
+<p>Tout est prévu avec Streamlit pour connecter un site à des sources de données sur l'ordinateur ou sur le web. Nous avons passé un certain temps à maitriser la connexion entre Streamlit et MongoDB Atlas et, surtout, à la sécuriser.</p>
+<p>Les aspects de fonctions asynchrones (<em>callback</em>) et d'états (<em>state</em>) ont aussi pris un certain temps à maitriser.</p>
+<h3 id="succes_1">Succès<a class="headerlink" href="#succes_1" title="Permanent link">&para;</a></h3>
+<p>Le résultat donne un site interactif de grande qualité. Les fonctionnalités de Streamlit permettent on bonne personnalisation, mais nous nous sommes limité à un gabarit assez standard.</p>
+<p>Streamlit n'est pas un cadriciel de site web complet. Il est spécialisé dans la construction d'interfaces web de présentation et d'interaction en science des données, en <em>Machine Learning</em>, en IA, en statistiques, en visualisation et toute autre utilisation connexe. L'offre de widgets d'interaction et d'options d'affichage colle à ces utilisations.</p>
+<p>La connexion avec MongoDB Atlas est robuste et peut être sécurisée. Les extractions sont fluides. Le NoSQL s'avère un excellent choix qui donne aussi une flexibilité pour changer le modèle des documents en cours de route. Choses plus ardue avec le SQL qui est rigide. Nous n'avons pas testé de gros volumes et nous nous limité à moins de 3000 documents par collection.</p>
+<p>Nous avons ensuite réussi à héberger le site en ligne pour le rendre accessible au grand public avec Streamlit Cloud. Il faut utiliser un fichier requirements.txt pour que Streamlit Cloud construise une version de notre site dans un environnement virtuel sur le nuage. Nous avons pensé tester Heroku, mais ce sera pour plus tard.</p>
+<h3 id="conclusion_1">Conclusion<a class="headerlink" href="#conclusion_1" title="Permanent link">&para;</a></h3>
+<p>Après de multiples tentatives, nous avons réussi à terminer un site:</p>
+<ul>
+<li>multipages,</li>
+<li>interactif, avec menus et sélections,</li>
+<li>avec une connexion à MongoDB Atlas,</li>
+<li>présentant des données avec tableaux et graphiques et</li>
+<li>avec un page de connexion en temps réel pour des mises à jour à intervalles réguliers (lorsque de nouvelles données entrent dans Atlas, elles peuvent être présentées).</li>
+</ul>
+<p>L'architecture n'est pas optimale par manque d'expérience. Le site peut être lent, peu réactif dans certains cas. Il manque aussi beaucoup de fonctionnalités que nous avons abandonnées par manque de temps.</p>
+<p>Streamlit offre un grand potentiel, mais requiert plus d'expérience pour le maitriser.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:annees">
+<p>LoRa, Sigfox, NB-LET sont des protocoles de la famille <em>Low Power WAN</em> ou LPWAN.&#160;<a class="footnote-backref" href="#fnref:annees" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["toc.follow", "toc.integrate", "navigation.top", "content.action.view"], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,951 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation de conception">
+      
+      
+        <meta name="author" content="Toucan Fortuné">
+      
+      
+      
+        <link rel="prev" href="../references/">
+      
+      
+      <link rel="icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.0.6">
+    
+    
+      
+        <title>Sources - Documentation de conception</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.558e4712.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.2505c338.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../docs/custom.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="green">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#codes-sources-et-outils" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Documentation de conception" class="md-header__button md-logo" aria-label="Documentation de conception" data-md-component="logo">
+      
+  <img src="../img/android-chrome-192x192.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation de conception
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sources
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="amber" data-md-color-accent="green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/toucan-fortune/manuel/tree/main" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    toucan-fortune/manuel
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentation de conception" class="md-nav__button md-logo" aria-label="Documentation de conception" data-md-component="logo">
+      
+  <img src="../img/android-chrome-192x192.jpg" alt="logo">
+
+    </a>
+    Documentation de conception
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/toucan-fortune/manuel/tree/main" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    toucan-fortune/manuel
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../description/" class="md-nav__link">
+        Description et diagrammes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./" class="md-nav__link">
+        Codes sources et outils
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/" class="md-nav__link">
+        Références
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Sources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Sources
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#codes-sources" class="md-nav__link">
+    Codes sources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#codes-sources-uml" class="md-nav__link">
+    Codes sources UML
+  </a>
+  
+    <nav class="md-nav" aria-label="Codes sources UML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#diagrammes-de-deploiement" class="md-nav__link">
+    Diagrammes de déploiement
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrammes de déploiement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wifi" class="md-nav__link">
+    WiFi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lora" class="md-nav__link">
+    LoRa
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plus" class="md-nav__link">
+    Plus
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrammes-dactivite" class="md-nav__link">
+    Diagrammes d'activité
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrammes d'activité">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rpi-pico" class="md-nav__link">
+    RPi Pico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlit" class="md-nav__link">
+    Streamlit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrammes-de-classe" class="md-nav__link">
+    Diagrammes de classe
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrammes de classe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rpi-pico_1" class="md-nav__link">
+    RPi Pico
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modele-de-document-mongodb" class="md-nav__link">
+    Modèle de document MongoDB
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagrammes-detat" class="md-nav__link">
+    Diagrammes d'état
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrammes d'état">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rpi-pico_2" class="md-nav__link">
+    RPi Pico
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamlit_1" class="md-nav__link">
+    Streamlit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autres-diagrammes" class="md-nav__link">
+    Autres diagrammes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#outils" class="md-nav__link">
+    Outils
+  </a>
+  
+    <nav class="md-nav" aria-label="Outils">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#services" class="md-nav__link">
+    Services
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base-de-donnees" class="md-nav__link">
+    Base de données
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logiciels" class="md-nav__link">
+    Logiciels
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composants" class="md-nav__link">
+    Composants
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+    
+      
+    
+    <a href="https://github.com/toucan-fortune/manuel/tree/main/raw/master/docs/sources.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+
+<h1 id="codes-sources-et-outils">Codes sources et outils<a class="headerlink" href="#codes-sources-et-outils" title="Permanent link">&para;</a></h1>
+<h2 id="codes-sources">Codes sources<a class="headerlink" href="#codes-sources" title="Permanent link">&para;</a></h2>
+<p>La majorité des <a href="https://github.com/toucan-fortune">codes sources se trouvent sur GitHub</a>.</p>
+<p>Sur certains dépôts, il y a aussi des liens vers un site web.</p>
+<ul>
+<li>Par exemple, <a href="https://github.com/toucan-fortune/streamlit_projet_integrateur">le dépôt du Tableau de bord Streamlit</a><ul>
+<li><a href="https://toucan-fortune-streamlit-projet-integrateur-01-accueil-0fsbkp.streamlit.app/">Le site Streamlit</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/toucan-fortune/doc_manuel">Le dépôt de la documentation de conception avec MkDocs</a><ul>
+<li><a href="https://toucan-fortune.github.io/doc_manuel/">Le site MkDocs</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="codes-sources-uml">Codes sources UML<a class="headerlink" href="#codes-sources-uml" title="Permanent link">&para;</a></h2>
+<p>Les diagrammes ont été réalisés avec PlantUML avec leur <a href="https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000">interface en ligne</a> et leur <a href="https://plantuml.com/fr/download">document PDF</a>. Voici les codes utilisés.</p>
+<h3 id="diagrammes-de-deploiement">Diagrammes de déploiement<a class="headerlink" href="#diagrammes-de-deploiement" title="Permanent link">&para;</a></h3>
+<p><em>deployment diagrams</em></p>
+<h4 id="wifi">WiFi<a class="headerlink" href="#wifi" title="Permanent link">&para;</a></h4>
+<pre><code>@startuml
+Title &quot;Diagramme de déploiement (WiFi)&quot;
+'----------
+'NOEUDS
+'----------
+node &quot;Noeud&quot; {
+  [&quot;Capteur \n(température, humidité; caméra)&quot;] #Darkorange/white 
+  [&quot;RPi Pico \n(avec WiFi et BLE)&quot;] #Indianred/white
+  note right : Analyses \n\n(ou Teensy et \nTinyML potentiel)
+  (&quot;de l'ordinateur&quot;) #DarkGray
+}
+
+node &quot;PC ou autre \nservant de passerelle&quot; {
+  [&quot;serveur \nMQTT&quot;] #Khaki/white
+}
+
+cloud Internet/Infonuagique #LightCyan {
+  [&quot;service \nMQTT&quot;] #DodgerBlue/white
+  database &quot;MongoDB Atlas&quot; #Yellowgreen/white {
+    collections &quot;Documents&quot; #Greenyellow/white
+  }
+  database GitHub #Green/white {
+    collections &quot;repo Tableau&quot; #Seagreen/white
+  }
+  cloud &quot;Streamlit Cloud&quot; #Cyan {
+    [&quot;Tableau \nde bord&quot;] #Seagreen/white
+  }
+}
+
+node &quot;Poste de développement&quot; {
+  package &quot;Streamlit&quot; #Magenta/white {
+    [&quot;projet Tableau&quot;] #Violet/white
+  }
+  package &quot;Thonny&quot; #Magenta/white {
+    [&quot;Programmes \nMicroPython&quot;] #Violet/white
+  }
+  (&quot;vers le MCU&quot;) #DarkGray
+  note right: aussi \nEDI et programme C/C++
+}
+'----------
+'LIENS
+'----------
+[&quot;Capteur \n(température, humidité; caméra)&quot;] &lt;--&gt; [&quot;RPi Pico \n(avec WiFi et BLE)&quot;] : GPIO: numérique ou analoqique
+(&quot;de l'ordinateur&quot;) --&gt; [&quot;RPi Pico \n(avec WiFi et BLE)&quot;] : USB
+[&quot;RPi Pico \n(avec WiFi et BLE)&quot;] &lt;.-&gt; [&quot;serveur \nMQTT&quot;]: WiFi
+
+[&quot;serveur \nMQTT&quot;] .-&gt; [&quot;service \nMQTT&quot;] : IP
+
+[&quot;service \nMQTT&quot;] .-&gt; &quot;Documents&quot; : IP
+&quot;Documents&quot; .-&gt; [&quot;projet Tableau&quot;] : IP
+[&quot;projet Tableau&quot;] &lt;.-&gt; &quot;repo Tableau&quot; : IP/git
+&quot;repo Tableau&quot; .--&gt; [&quot;Tableau \nde bord&quot;]: IP
+&quot;Documents&quot; .-&gt; [&quot;Tableau \nde bord&quot;] : API
+
+[&quot;Programmes \nMicroPython&quot;] --&gt; (&quot;vers le MCU&quot;) : USB
+
+@enduml
+</code></pre>
+<h4 id="lora">LoRa<a class="headerlink" href="#lora" title="Permanent link">&para;</a></h4>
+<pre><code>@startuml
+Title &quot;Diagramme de déploiement (LoRa)&quot;
+'----------
+'NOEUDS
+'----------
+node &quot;Noeud&quot; {
+  [&quot;Capteur \n(température, humidité; caméra)&quot;] #Darkorange/white 
+  [&quot;RPi Pico \n(avec WiFi et BLE)&quot;] #Indianred/white
+  note right : Analyses \n\n(ou Teensy et \nTinyML potentiel)
+  (&quot;de l'ordinateur&quot;) #DarkGray
+  [&quot;émetteur-transmetteur \nLoRa&quot;] #Darkorange/white
+}
+
+node &quot;Passerelle&quot; {
+  [LoRaWAN] #Khaki/white
+}
+
+cloud Internet/Infonuagique #LightCyan {
+  [&quot;The \nThings \nNetwork&quot;] #DodgerBlue/white
+  database &quot;MongoDB Atlas&quot; #Yellowgreen/white {
+    collections &quot;Documents&quot; #Greenyellow/white
+  }
+  database GitHub #Green/white {
+    collections &quot;repo Tableau&quot; #Seagreen/white
+  }
+  cloud &quot;Streamlit Cloud&quot; #Cyan {
+    [&quot;Tableau \nde bord&quot;] #Seagreen/white
+  }
+}
+
+node &quot;Poste de développement&quot; {
+  package &quot;Streamlit&quot; #Magenta/white {
+    [&quot;projet Tableau&quot;] #Violet/white
+  }
+  package &quot;Thonny&quot; #Magenta/white {
+    [&quot;Programmes \nMicroPython&quot;] #Violet/white
+  }
+  (&quot;vers le MCU&quot;) #DarkGray
+  note right: aussi \nEDI et programme C/C++
+}
+'----------
+'LIENS
+'----------
+[&quot;Capteur \n(température, humidité; caméra)&quot;] &lt;--&gt; [&quot;RPi Pico \n(avec WiFi et BLE)&quot;] : GPIO: numérique ou analoqique
+(&quot;de l'ordinateur&quot;) --&gt; [&quot;RPi Pico \n(avec WiFi et BLE)&quot;] : USB
+[&quot;RPi Pico \n(avec WiFi et BLE)&quot;] &lt;--&gt; [&quot;émetteur-transmetteur \nLoRa&quot;] : GPIO: UART ou SPI?
+
+[&quot;émetteur-transmetteur \nLoRa&quot;] &lt;.-&gt; [LoRaWAN]: RF
+[LoRaWAN] &lt;.-&gt; [&quot;The \nThings \nNetwork&quot;] : IP
+
+[&quot;The \nThings \nNetwork&quot;] .-&gt; &quot;Documents&quot; : MQTT?
+&quot;Documents&quot; .-&gt; [&quot;projet Tableau&quot;] : IP
+[&quot;projet Tableau&quot;] &lt;.-&gt; &quot;repo Tableau&quot; : IP/git
+&quot;repo Tableau&quot; .--&gt; [&quot;Tableau \nde bord&quot;]: IP
+&quot;Documents&quot; .-&gt; [&quot;Tableau \nde bord&quot;] : IP
+
+[&quot;Programmes \nMicroPython&quot;] --&gt; (&quot;vers le MCU&quot;) : USB
+
+@enduml
+</code></pre>
+<h4 id="plus">Plus<a class="headerlink" href="#plus" title="Permanent link">&para;</a></h4>
+<pre><code>@startuml
+Title &quot;Diagramme de déploiement&quot;
+'----------
+'NOEUDS
+'----------
+cloud Internet/infonuagique #LightCyan {
+  database &quot;MongoDB Atlas&quot; #Yellowgreen/white {
+    collections &quot;Documents&quot; #Greenyellow/white
+  }
+}
+
+node &quot;Poste de développement&quot; {
+  package &quot;pymongo \nNumpy-Pandas \nvisualisation... \nScikit-Learn, statsmodels...&quot; #Magenta/white {
+    [&quot;Analyses et \nML potentiel&quot;] #Violet/white
+  }
+  package &quot;Streamlit&quot; #Magenta/white {
+    [&quot;projets&quot;] #Violet/white
+  }
+}
+'----------
+'LIENS
+'----------
+&quot;Documents&quot; &lt;.-&gt; [&quot;Analyses et \nML potentiel&quot;] : IP
+[&quot;Analyses et \nML potentiel&quot;] -&gt; [&quot;projets&quot;]
+
+@enduml
+</code></pre>
+<h3 id="diagrammes-dactivite">Diagrammes d'activité<a class="headerlink" href="#diagrammes-dactivite" title="Permanent link">&para;</a></h3>
+<p><em>activity diagrams</em></p>
+<h4 id="rpi-pico">RPi Pico<a class="headerlink" href="#rpi-pico" title="Permanent link">&para;</a></h4>
+<p>Diagramme réel</p>
+<pre><code>@startuml
+repeat
+  partition Capteur {
+    :Mesurer;
+  }
+  partition RPi Pico {
+    :Recevoir;
+    :Envoyer données \nà passerelle WiFi;
+  }
+repeat while (Intervalle de temps \nparamétré) is (nouveau \ncycle)
+stop
+@enduml
+</code></pre>
+<p>Diagramme planifié</p>
+<pre><code>repeat
+  partition Capteur {
+    :Mesurer;
+  }
+  partition RPi Pico {
+    :Recevoir et \nenregistrer mesures \nen mémoire flash;
+    :Analyser mesures et \ncalculer statistiques;
+    :Envoyer données \npar passerelle, serveur;
+  }
+repeat while (Intervalle de temps \nparamétré) is (nouveau \ncycle)
+stop
+</code></pre>
+<h4 id="streamlit">Streamlit<a class="headerlink" href="#streamlit" title="Permanent link">&para;</a></h4>
+<pre><code>@startuml
+partition Site Streamlit {
+start
+:Ouvrir page web;
+:Connecter à \nMongoDB Atlas;
+if (S'authentifier?) is (réussi) then
+  :Utiliser paramètres \npar défaut;
+  (A)
+  kill
+else
+  :Message erreur;
+kill
+
+(A)
+if (Changer paramètres?) is (fait) then
+  :Mettre à jour \net continuer;
+  (B)
+  kill
+else
+  :Continuer;
+  (B)
+  kill
+
+(B)
+:Lancer l'extraction;
+repeat
+  :Extraire données de \nMongoDB Atlas;
+  (C)
+'backward:Vérifier;
+repeat while (Intervalle de temps \nparamétré) is (nouveau \ncycle)
+:Arrêter l'extraction;
+kill
+
+(C)
+:Traiter et présenter \ndonnées;
+:Fermeture page web;
+stop
+@enduml
+</code></pre>
+<h3 id="diagrammes-de-classe">Diagrammes de classe<a class="headerlink" href="#diagrammes-de-classe" title="Permanent link">&para;</a></h3>
+<p><em>class diagrams</em></p>
+<h4 id="rpi-pico_1">RPi Pico<a class="headerlink" href="#rpi-pico_1" title="Permanent link">&para;</a></h4>
+<pre><code>@startuml
+class User {
+  username
+  password
+  +sign_in()
+}
+
+class Group {
+  name
+}
+
+class Member {
+  roles
+}
+
+User .. Member
+Group .. Member
+@enduml
+</code></pre>
+<h3 id="modele-de-document-mongodb">Modèle de document MongoDB<a class="headerlink" href="#modele-de-document-mongodb" title="Permanent link">&para;</a></h3>
+<p><em>display JSON</em></p>
+<pre><code>@startjson
+{
+&quot;datetime&quot;: &quot;2023-01-13 16:15:39.401550&quot;,
+&quot;noeud&quot;: &quot;pico01&quot;,  
+&quot;capteur&quot;: &quot;temperature&quot;,
+&quot;metrique&quot;: &quot;brute&quot;,
+&quot;valeur&quot;: 23.4519
+}
+@endjson
+</code></pre>
+<h3 id="diagrammes-detat">Diagrammes d'état<a class="headerlink" href="#diagrammes-detat" title="Permanent link">&para;</a></h3>
+<p><em>state diagrams</em></p>
+<h4 id="rpi-pico_2">RPi Pico<a class="headerlink" href="#rpi-pico_2" title="Permanent link">&para;</a></h4>
+<pre><code>@startuml
+[*] --&gt; Branché
+
+Branché: RPi Pico branché \npour code et \nalimenté (On)
+Branché-&gt; Débranché
+Débranché: RPi Pico débranché et \nnon alimenté (On)
+Branché&lt;- Débranché
+
+Branché--&gt; [*]
+Débranché--&gt; [*]
+@enduml
+</code></pre>
+<h4 id="streamlit_1">Streamlit<a class="headerlink" href="#streamlit_1" title="Permanent link">&para;</a></h4>
+<pre><code>@startuml
+[*] --&gt; Actif
+
+Actif: Session du site \nStreamlit active
+Actif-&gt; Inactif
+Inactif: Aucun session active
+Actif&lt;- Inactif
+
+Actif--&gt; [*]
+Inactif--&gt; [*]
+@enduml
+</code></pre>
+<h3 id="autres-diagrammes">Autres diagrammes<a class="headerlink" href="#autres-diagrammes" title="Permanent link">&para;</a></h3>
+<p>D'autres diagrammes n'ont pas été utilisés, car inutiles:</p>
+<ul>
+<li>aucun diagramme d'utilisation (<em>use case</em>); pas d'usager de logiciel, produit;</li>
+<li>aucun diagramme de séquence (<em>use case</em>); idem;</li>
+<li>aucun diagramme de paquetage; aucun logiciel complexe.</li>
+</ul>
+<h2 id="outils">Outils<a class="headerlink" href="#outils" title="Permanent link">&para;</a></h2>
+<h3 id="services">Services<a class="headerlink" href="#services" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Documentation</li>
+<li>PlantUML (diagrammes)</li>
+<li>Markdown (MkDocs, GitHub, etc.)</li>
+<li>MkDocc (documentation)</li>
+<li>tableur pour la comptabilité, le budget (pièces et autres)</li>
+<li>Gestion des versions et hébergement<ul>
+<li>langage Git</li>
+<li>GitHub</li>
+</ul>
+</li>
+<li>Hébergement<ul>
+<li>Streamlit Cloud</li>
+</ul>
+</li>
+<li>Collaboration au projet<ul>
+<li>Trello</li>
+<li>Teams</li>
+</ul>
+</li>
+</ul>
+<h3 id="base-de-donnees">Base de données<a class="headerlink" href="#base-de-donnees" title="Permanent link">&para;</a></h3>
+<ul>
+<li>MongoDB, MongoDB Atlas</li>
+<li>Compass</li>
+</ul>
+<h3 id="logiciels">Logiciels<a class="headerlink" href="#logiciels" title="Permanent link">&para;</a></h3>
+<ul>
+<li>JupyterLab pour Python (pour préparer des parties de Streamlit)</li>
+<li>Spyder pour Streamlit, langages web et Python</li>
+<li>PyScripter pour Python</li>
+<li>VS pour Markdown et Python</li>
+<li>Thonny pour MicroPython</li>
+<li>Notepad2 pour autres textes</li>
+</ul>
+<h2 id="composants">Composants<a class="headerlink" href="#composants" title="Permanent link">&para;</a></h2>
+<ul>
+<li>microcontrôleur Raspberry Pi Pico W (sans entêtes)</li>
+<li>entêtes 2x20 à souder</li>
+<li>platine de développement</li>
+<li>alimentation 3.3V (câble USB ou piles)</li>
+<li>capteur de température-humidité numérique I2C DS 18B20</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Retour en haut de la page
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["toc.follow", "toc.integrate", "navigation.top", "content.action.view"], "search": "../assets/javascripts/workers/search.e5c33ebb.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.51d95adb.min.js"></script>
+      
+    
+  </body>
+</html>
